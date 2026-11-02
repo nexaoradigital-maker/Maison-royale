@@ -1,0 +1,1922 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maison Royale | The Art of Fine Dining</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --cream: #f6f3eb;
+  --olive: #303b2d;
+  --green: #68745b;
+  --gold: #b49a6a;
+  --brown: #302a23;
+  --muted: #898579;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--cream);
+  color: var(--brown);
+  font-family: 'DM Sans', sans-serif;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.page {
+  display: none;
+  animation: pageIn .45s ease;
+}
+
+.page.active {
+  display: block;
+}
+
+@keyframes pageIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* TOP BAR */
+
+.topbar {
+  background: var(--olive);
+  color: #f6f3eb;
+  text-align: center;
+  padding: 10px;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* NAVIGATION */
+
+.navbar {
+  min-height: 88px;
+  padding: 18px 7%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(48,42,35,.12);
+  position: relative;
+  z-index: 10;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 27px;
+  letter-spacing: 1px;
+  color: var(--olive);
+  line-height: 1;
+}
+
+.logo span {
+  display: block;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 8px;
+  letter-spacing: 5px;
+  text-align: center;
+  margin-top: 7px;
+  color: var(--gold);
+}
+
+.navlinks {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.navlinks button {
+  border: none;
+  background: none;
+  color: var(--brown);
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  transition: .3s;
+}
+
+.navlinks button:hover {
+  color: var(--gold);
+}
+
+.navlinks .nav-cta {
+  background: var(--olive);
+  color: white;
+  padding: 14px 20px;
+}
+
+.navlinks .nav-cta:hover {
+  background: var(--gold);
+  color: white;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--olive);
+  font-size: 25px;
+}
+
+/* HERO */
+
+.hero {
+  min-height: 650px;
+  display: flex;
+  align-items: center;
+  padding: 90px 8%;
+  position: relative;
+  background:
+    linear-gradient(90deg, rgba(20,27,19,.76), rgba(20,27,19,.15)),
+    url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1800') center/cover;
+  color: white;
+}
+
+.hero-content {
+  max-width: 650px;
+}
+
+.eyebrow {
+  color: var(--gold);
+  letter-spacing: 4px;
+  font-size: 10px;
+  text-transform: uppercase;
+  margin-bottom: 25px;
+}
+
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(48px, 7vw, 86px);
+  font-weight: 400;
+  line-height: 1.08;
+  margin-bottom: 25px;
+}
+
+.hero p {
+  max-width: 430px;
+  color: #e5e1d8;
+  line-height: 1.9;
+  font-size: 14px;
+  margin-bottom: 35px;
+}
+
+.btn {
+  display: inline-block;
+  border: 1px solid var(--gold);
+  background: var(--gold);
+  color: white;
+  padding: 16px 25px;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transition: .3s;
+}
+
+.btn:hover {
+  background: transparent;
+  color: white;
+}
+
+.btn-outline {
+  background: transparent;
+  border: 1px solid white;
+  margin-left: 10px;
+}
+
+.btn-outline:hover {
+  background: white;
+  color: var(--olive);
+}
+
+.hero-bottom {
+  position: absolute;
+  bottom: 25px;
+  right: 8%;
+  font-size: 9px;
+  letter-spacing: 3px;
+  color: #eee7d9;
+  text-transform: uppercase;
+}
+
+/* INTRO */
+
+.intro {
+  padding: 100px 8%;
+  text-align: center;
+}
+
+.intro .eyebrow {
+  color: var(--gold);
+}
+
+.intro h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(34px, 5vw, 56px);
+  font-weight: 400;
+  color: var(--olive);
+  max-width: 750px;
+  margin: 0 auto 22px;
+  line-height: 1.2;
+}
+
+.intro p {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 2;
+  max-width: 570px;
+  margin: auto;
+}
+
+/* FOOTER */
+
+.footer {
+  background: var(--olive);
+  color: var(--cream);
+  padding: 45px 8%;
+  text-align: center;
+}
+
+.footer h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 30px;
+  font-weight: 400;
+  margin-bottom: 12px;
+}
+
+.footer p {
+  color: #c9c9bb;
+  font-size: 11px;
+  letter-spacing: 1px;
+}
+
+@media(max-width: 800px) {
+  .navbar {
+    min-height: 75px;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .navlinks {
+    display: none;
+    position: absolute;
+    top: 75px;
+    left: 0;
+    width: 100%;
+    background: var(--cream);
+    padding: 25px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 22px;
+    box-shadow: 0 10px 20px rgba(0,0,0,.08);
+  }
+
+  .navlinks.open {
+    display: flex;
+  }
+
+  .navlinks button {
+    text-align: left;
+    padding: 8px 0;
+  }
+
+  .navlinks .nav-cta {
+    text-align: center;
+  }
+
+  .hero {
+    min-height: 570px;
+    padding: 65px 7%;
+  }
+
+  .hero-bottom {
+    right: 7%;
+  }
+
+  .btn {
+    padding: 14px 17px;
+    font-size: 9px;
+  }
+}
+
+@media(max-width: 390px) {
+  .btn-outline {
+    margin: 12px 0 0;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="topbar">
+A destination for exceptional dining
+</div>
+
+<header class="navbar">
+
+  <div class="logo">
+    MAISON ROYALE
+    <span>FINE DINING</span>
+  </div>
+
+  <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+
+  <nav class="navlinks" id="navlinks">
+    <button onclick="goToPage('home')">Home</button>
+    <button onclick="goToPage('story')">Our Story</button>
+    <button onclick="goToPage('menu')">Menu</button>
+    <button onclick="goToPage('gallery')">Gallery</button>
+    <button onclick="goToPage('contact')">Contact</button>
+    <button class="nav-cta" onclick="goToPage('reservation')">Reserve a Table</button>
+  </nav>
+
+</header>
+
+<main>
+
+<!-- HOME PAGE -->
+
+<section class="page active" id="home">
+
+  <div class="hero">
+
+    <div class="hero-content">
+
+      <div class="eyebrow">An Experience Beyond Dining</div>
+
+      <h1>A Taste of Timeless Elegance.</h1>
+
+      <p>
+        Discover the art of exceptional dining, where refined flavours,
+        beautiful surroundings and thoughtful hospitality come together.
+      </p>
+
+      <button class="btn" onclick="goToPage('menu')">
+        Explore Our Menu →
+      </button>
+
+      <button class="btn btn-outline" onclick="goToPage('reservation')">
+        Book Your Table
+      </button>
+
+    </div>
+
+    <div class="hero-bottom">
+      Crafted for unforgettable moments
+    </div>
+
+  </div>
+
+  <div class="intro">
+
+    <div class="eyebrow">Welcome to Maison Royale</div>
+
+    <h2>Where Every Detail Becomes an Experience.</h2>
+
+    <p>
+      A celebration of exquisite flavours, timeless atmosphere
+      and the pleasure of sharing beautiful moments around the table.
+    </p>
+
+  </div>
+
+</section>
+
+<!-- NEXT PART WILL BE ADDED BELOW -->
+
+</main>
+
+<footer class="footer">
+  <h2>MAISON ROYALE</h2>
+  <p>THE ART OF FINE DINING · AN EXPERIENCE TO REMEMBER</p>
+</footer>
+
+<script>
+
+function goToPage(pageId) {
+
+  const pages = document.querySelectorAll('.page');
+
+  pages.forEach(page => {
+    page.classList.remove('active');
+  });
+
+  const selectedPage = document.getElementById(pageId);
+
+  if (selectedPage) {
+    selectedPage.classList.add('active');
+    window.location.hash = pageId;
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  document.getElementById('navlinks').classList.remove('open');
+}
+
+function toggleMenu() {
+  document.getElementById('navlinks').classList.toggle('open');
+}
+
+window.addEventListener('load', function() {
+  const pageId = window.location.hash.replace('#', '');
+
+  if (pageId && document.getElementById(pageId)) {
+    goToPage(pageId);
+  }
+});
+
+window.addEventListener('hashchange', function() {
+  const pageId = window.location.hash.replace('#', '');
+
+  if (pageId && document.getElementById(pageId)) {
+    goToPage(pageId);
+  }
+});
+
+</script>
+
+</body>
+</html>
+
+<script>
+(function() {
+
+const storyStyle = `
+.story-page {
+  background: #303b2d;
+  color: #f6f3eb;
+  padding: 85px 8%;
+}
+
+.story-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 65px;
+}
+
+.story-image img {
+  width: 100%;
+  height: 550px;
+  object-fit: cover;
+  display: block;
+}
+
+.story-content .eyebrow {
+  color: #b49a6a;
+}
+
+.story-content h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(38px, 5vw, 60px);
+  font-weight: 400;
+  line-height: 1.2;
+  margin: 20px 0;
+}
+
+.story-content p {
+  color: #d2d2c7;
+  font-size: 13px;
+  line-height: 2;
+  margin-bottom: 20px;
+}
+
+.story-signature {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 23px;
+  color: #b49a6a;
+  margin: 28px 0;
+}
+
+.story-quote {
+  padding: 90px 8%;
+  text-align: center;
+  background: #f6f3eb;
+  color: #303b2d;
+}
+
+.story-quote h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(30px, 5vw, 48px);
+  font-weight: 400;
+  line-height: 1.3;
+}
+
+.story-quote p {
+  color: #b49a6a;
+  margin-top: 20px;
+  letter-spacing: 3px;
+  font-size: 10px;
+}
+
+.story-page .btn {
+  margin-top: 10px;
+}
+
+@media(max-width:800px) {
+  .story-layout {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .story-image img {
+    height: 400px;
+  }
+
+  .story-page {
+    padding: 60px 7%;
+  }
+}
+`;
+
+const storyHTML = `
+<section class="page" id="story">
+
+  <div class="story-page">
+
+    <div class="story-layout">
+
+      <div class="story-image">
+        <img
+          src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1000"
+          alt="Elegant restaurant dining">
+      </div>
+
+      <div class="story-content">
+
+        <div class="eyebrow">OUR PHILOSOPHY · OUR STORY</div>
+
+        <h2>More Than a Meal, A Beautiful Memory.</h2>
+
+        <p>
+          At Maison Royale, dining is an art shaped by passion,
+          creativity and an appreciation for life's finer details.
+        </p>
+
+        <p>
+          From carefully considered flavours to an atmosphere
+          designed for meaningful moments, every element reflects
+          our belief that exceptional dining should be unforgettable.
+        </p>
+
+        <div class="story-signature">
+          The beauty is in every detail.
+        </div>
+
+        <button class="btn" onclick="goToPage('menu')">
+          Discover Our Menu →
+        </button>
+
+        <button class="btn btn-outline"
+          onclick="goToPage('home')">
+          Back to Home
+        </button>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="story-quote">
+    <h2>
+      A beautiful table is where wonderful moments begin.
+    </h2>
+    <p>THE MAISON ROYALE PHILOSOPHY</p>
+  </div>
+
+</section>
+`;
+
+document.head.insertAdjacentHTML(
+  'beforeend',
+  '<style>' + storyStyle + '</style>'
+);
+
+document.body.insertAdjacentHTML('beforeend', storyHTML);
+
+})();
+</script>
+
+<script>
+(function() {
+
+const menuStyle = `
+.menu-page {
+  background: #f6f3eb;
+  padding: 85px 7%;
+}
+
+.menu-heading {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 55px;
+}
+
+.menu-heading .eyebrow {
+  color: #b49a6a;
+}
+
+.menu-heading h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(40px, 6vw, 65px);
+  font-weight: 400;
+  color: #303b2d;
+  margin: 15px 0;
+}
+
+.menu-heading p {
+  color: #898579;
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  max-width: 1250px;
+  margin: auto;
+}
+
+.menu-card {
+  background: #fffefa;
+  overflow: hidden;
+  transition: .35s;
+}
+
+.menu-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 40px rgba(48,59,45,.12);
+}
+
+.menu-card img {
+  width: 100%;
+  height: 255px;
+  object-fit: cover;
+  display: block;
+}
+
+.menu-card-content {
+  padding: 25px 23px 30px;
+}
+
+.menu-card-content span {
+  color: #b49a6a;
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.menu-card-content h3 {
+  font-family: 'Playfair Display', serif;
+  color: #303b2d;
+  font-size: 25px;
+  font-weight: 400;
+  margin: 12px 0;
+}
+
+.menu-card-content p {
+  color: #898579;
+  font-size: 12px;
+  line-height: 1.8;
+  min-height: 65px;
+}
+
+.menu-price {
+  display: block;
+  margin-top: 20px;
+  color: #303b2d;
+  font-family: 'Playfair Display', serif;
+  font-size: 21px;
+}
+
+.menu-bottom {
+  text-align: center;
+  margin-top: 55px;
+}
+
+.menu-bottom p {
+  color: #898579;
+  font-size: 12px;
+  margin-bottom: 20px;
+}
+
+.menu-bottom .btn {
+  background: #303b2d;
+  border-color: #303b2d;
+}
+
+.menu-bottom .btn:hover {
+  background: transparent;
+  color: #303b2d;
+}
+
+@media(max-width:850px) {
+  .menu-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media(max-width:560px) {
+  .menu-page {
+    padding: 65px 6%;
+  }
+
+  .menu-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .menu-card img {
+    height: 260px;
+  }
+}
+`;
+
+const menuHTML = `
+<section class="page" id="menu">
+
+  <div class="menu-page">
+
+    <div class="menu-heading">
+
+      <div class="eyebrow">A Curated Culinary Collection</div>
+
+      <h2>Our Signature Menu.</h2>
+
+      <p>
+        Thoughtfully created dishes, beautiful ingredients
+        and unforgettable flavours. Discover a taste of
+        the Maison Royale experience.
+      </p>
+
+    </div>
+
+    <div class="menu-grid">
+
+      <div class="menu-card">
+        <img src="https://images.unsplash.com/photo-1547592180-85f173990554?w=800"
+        alt="Fresh gourmet salad">
+        <div class="menu-card-content">
+          <span>Fresh & Elegant</span>
+          <h3>Garden Elegance</h3>
+          <p>
+            A refreshing composition of seasonal greens,
+            fresh ingredients and delicate dressing.
+          </p>
+          <strong class="menu-price">$18</strong>
+        </div>
+      </div>
+
+      <div class="menu-card">
+        <img src="https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=800"
+        alt="Fine dining main course">
+        <div class="menu-card-content">
+          <span>Chef's Selection</span>
+          <h3>Royal Signature</h3>
+          <p>
+            A beautifully presented signature main course
+            inspired by refined culinary traditions.
+          </p>
+          <strong class="menu-price">$32</strong>
+        </div>
+      </div>
+
+      <div class="menu-card">
+        <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?w=800"
+        alt="Elegant dessert">
+        <div class="menu-card-content">
+          <span>Sweet Indulgence</span>
+          <h3>Golden Delight</h3>
+          <p>
+            A delicate dessert crafted to bring a
+            beautiful finish to your dining experience.
+          </p>
+          <strong class="menu-price">$14</strong>
+        </div>
+      </div>
+
+      <div class="menu-card">
+        <img src="https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?w=800"
+        alt="Gourmet dinner">
+        <div class="menu-card-content">
+          <span>House Favourite</span>
+          <h3>Heritage Plate</h3>
+          <p>
+            A rich and comforting culinary creation
+            with a contemporary presentation.
+          </p>
+          <strong class="menu-price">$26</strong>
+        </div>
+      </div>
+
+      <div class="menu-card">
+        <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=800"
+        alt="Healthy gourmet food">
+        <div class="menu-card-content">
+          <span>Seasonal Selection</span>
+          <h3>Harvest Bowl</h3>
+          <p>
+            A colourful combination of fresh seasonal
+            produce and carefully balanced flavours.
+          </p>
+          <strong class="menu-price">$20</strong>
+        </div>
+      </div>
+
+      <div class="menu-card">
+        <img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?w=800"
+        alt="Fine dining sweet dish">
+        <div class="menu-card-content">
+          <span>From Our Patisserie</span>
+          <h3>Velvet Cream</h3>
+          <p>
+            A smooth and indulgent sweet creation
+            for a memorable final course.
+          </p>
+          <strong class="menu-price">$16</strong>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="menu-bottom">
+      <p>Our menu is a sample concept for this website demo.</p>
+
+      <button class="btn" onclick="goToPage('reservation')">
+        Reserve Your Experience →
+      </button>
+    </div>
+
+  </div>
+
+</section>
+`;
+
+document.head.insertAdjacentHTML(
+  'beforeend',
+  '<style>' + menuStyle + '</style>'
+);
+
+document.body.insertAdjacentHTML('beforeend', menuHTML);
+
+})();
+</script>
+
+<script>
+(function() {
+
+const galleryStyle = `
+.gallery-page {
+  background: #f6f3eb;
+  padding: 85px 7%;
+}
+
+.gallery-heading {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 55px;
+}
+
+.gallery-heading .eyebrow {
+  color: #b49a6a;
+}
+
+.gallery-heading h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(40px, 6vw, 65px);
+  font-weight: 400;
+  color: #303b2d;
+  margin: 15px 0;
+}
+
+.gallery-heading p {
+  color: #898579;
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: 1.2fr .8fr 1fr;
+  grid-template-rows: 270px 270px;
+  gap: 15px;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+}
+
+.gallery-item:first-child {
+  grid-row: span 2;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform .7s;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.07);
+}
+
+.gallery-caption {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 35px 20px 18px;
+  color: white;
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  background: linear-gradient(transparent, rgba(0,0,0,.65));
+}
+
+.gallery-bottom {
+  text-align: center;
+  margin-top: 55px;
+}
+
+.gallery-bottom p {
+  color: #898579;
+  font-size: 12px;
+  margin-bottom: 20px;
+}
+
+.gallery-bottom .btn {
+  background: #303b2d;
+  border-color: #303b2d;
+}
+
+.gallery-bottom .btn:hover {
+  background: transparent;
+  color: #303b2d;
+}
+
+@media(max-width:700px) {
+  .gallery-page {
+    padding: 65px 6%;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 260px 200px 200px;
+    gap: 10px;
+  }
+
+  .gallery-item:first-child {
+    grid-column: span 2;
+    grid-row: span 1;
+  }
+
+  .gallery-caption {
+    font-size: 17px;
+    padding: 30px 12px 12px;
+  }
+}
+`;
+
+const galleryHTML = `
+<section class="page" id="gallery">
+
+  <div class="gallery-page">
+
+    <div class="gallery-heading">
+      <div class="eyebrow">A Visual Journey</div>
+
+      <h2>Moments at Maison.</h2>
+
+      <p>
+        A glimpse into the atmosphere, flavours and
+        beautiful details that define our dining experience.
+      </p>
+    </div>
+
+    <div class="gallery-grid">
+
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1000"
+        alt="Elegant restaurant dining room">
+        <div class="gallery-caption">The Art of Dining</div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1547592180-85f173990554?w=800"
+        alt="Fresh gourmet food">
+        <div class="gallery-caption">Fresh Flavours</div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?w=800"
+        alt="Fine dining dessert">
+        <div class="gallery-caption">Sweet Moments</div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800"
+        alt="Luxury restaurant interior">
+        <div class="gallery-caption">Beautiful Spaces</div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?w=800"
+        alt="Chef's special dish">
+        <div class="gallery-caption">Chef's Creations</div>
+      </div>
+
+    </div>
+
+    <div class="gallery-bottom">
+      <p>Every moment deserves a beautiful setting.</p>
+
+      <button class="btn"
+        onclick="goToPage('reservation')">
+        Experience Maison Royale →
+      </button>
+    </div>
+
+  </div>
+
+</section>
+`;
+
+document.head.insertAdjacentHTML(
+  'beforeend',
+  '<style>' + galleryStyle + '</style>'
+);
+
+document.body.insertAdjacentHTML('beforeend', galleryHTML);
+
+})();
+</script>
+
+<script>
+(function() {
+
+const reservationStyle = `
+.reservation-page {
+  background: #303b2d;
+  color: #f6f3eb;
+  padding: 85px 7%;
+}
+
+.reservation-layout {
+  max-width: 1100px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: .85fr 1.15fr;
+  gap: 65px;
+  align-items: center;
+}
+
+.reservation-info .eyebrow {
+  color: #b49a6a;
+}
+
+.reservation-info h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(40px, 5vw, 62px);
+  font-weight: 400;
+  line-height: 1.15;
+  margin: 20px 0;
+}
+
+.reservation-info p {
+  color: #d2d2c7;
+  font-size: 13px;
+  line-height: 2;
+}
+
+.reservation-note {
+  border-top: 1px solid rgba(255,255,255,.2);
+  margin-top: 35px;
+  padding-top: 22px;
+  color: #b49a6a;
+  font-size: 11px;
+  letter-spacing: 1px;
+}
+
+.reservation-form {
+  background: #f6f3eb;
+  color: #303b2d;
+  padding: 38px;
+}
+
+.reservation-form h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 32px;
+  font-weight: 400;
+  margin-bottom: 25px;
+}
+
+.reservation-form label {
+  display: block;
+  font-size: 10px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.reservation-form input,
+.reservation-form select,
+.reservation-form textarea {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 20px;
+  border: 1px solid #ded9cb;
+  background: #fffefa;
+  color: #302a23;
+  font-family: inherit;
+  font-size: 13px;
+  outline: none;
+}
+
+.reservation-form input:focus,
+.reservation-form select:focus,
+.reservation-form textarea:focus {
+  border-color: #b49a6a;
+}
+
+.reservation-form textarea {
+  min-height: 90px;
+  resize: vertical;
+}
+
+.reservation-form button {
+  width: 100%;
+  background: #303b2d;
+  color: white;
+  border: 1px solid #303b2d;
+  padding: 16px;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.reservation-form button:hover {
+  background: #b49a6a;
+  border-color: #b49a6a;
+}
+
+.booking-message {
+  display: none;
+  background: #e6eadf;
+  color: #303b2d;
+  padding: 15px;
+  margin-top: 18px;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+@media(max-width:800px) {
+  .reservation-layout {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .reservation-page {
+    padding: 65px 6%;
+  }
+
+  .reservation-form {
+    padding: 25px 20px;
+  }
+}
+`;
+
+const reservationHTML = `
+<section class="page" id="reservation">
+
+  <div class="reservation-page">
+
+    <div class="reservation-layout">
+
+      <div class="reservation-info">
+
+        <div class="eyebrow">Your Table Awaits</div>
+
+        <h2>Make It a Moment to Remember.</h2>
+
+        <p>
+          Join us for an exceptional dining experience.
+          Choose your preferred date and time, and share
+          your reservation details with us.
+        </p>
+
+        <div class="reservation-note">
+          AN EVENING WORTH REMEMBERING · MAISON ROYALE
+        </div>
+
+      </div>
+
+      <form class="reservation-form" id="bookingForm">
+
+        <h3>Reserve Your Table</h3>
+
+        <label>Your Name</label>
+        <input type="text" name="name"
+          placeholder="Enter your full name" required>
+
+        <label>Email Address</label>
+        <input type="email" name="email"
+          placeholder="Enter your email" required>
+
+        <label>Phone Number</label>
+        <input type="tel" name="phone"
+          placeholder="Your contact number" required>
+
+        <label>Reservation Date</label>
+        <input type="date" name="date" id="bookingDate" required>
+
+        <label>Preferred Time</label>
+        <select name="time" required>
+          <option value="">Choose a time</option>
+          <option>12:00 PM</option>
+          <option>1:00 PM</option>
+          <option>2:00 PM</option>
+          <option>6:00 PM</option>
+          <option>7:00 PM</option>
+          <option>8:00 PM</option>
+          <option>9:00 PM</option>
+        </select>
+
+        <label>Number of Guests</label>
+        <select name="guests" required>
+          <option value="">Select guests</option>
+          <option>1 Guest</option>
+          <option>2 Guests</option>
+          <option>3 Guests</option>
+          <option>4 Guests</option>
+          <option>5 Guests</option>
+          <option>6 Guests</option>
+          <option>7+ Guests</option>
+        </select>
+
+        <label>Special Request (Optional)</label>
+        <textarea name="message"
+          placeholder="Any special requests?"></textarea>
+
+        <button type="submit">
+          Send Reservation Request →
+        </button>
+
+        <div class="booking-message" id="bookingMessage">
+          Thank you! This is a website demo. Your request
+          has not been sent to a real restaurant.
+        </div>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</section>
+`;
+
+document.head.insertAdjacentHTML(
+  'beforeend',
+  '<style>' + reservationStyle + '</style>'
+);
+
+document.body.insertAdjacentHTML('beforeend', reservationHTML);
+
+const dateField = document.getElementById('bookingDate');
+dateField.min = new Date().toISOString().split('T')[0];
+
+document.getElementById('bookingForm').addEventListener('submit', function(event) {
+  event.preventDefault();
+
+  document.getElementById('bookingMessage').style.display = 'block';
+
+  this.reset();
+
+  dateField.min = new Date().toISOString().split('T')[0];
+});
+
+})();
+</script>
+
+<script>
+(function() {
+
+const contactStyle = `
+.contact-page {
+  background: #f6f3eb;
+  padding: 90px 7%;
+}
+
+.contact-layout {
+  max-width: 1100px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 65px;
+}
+
+.contact-info .eyebrow {
+  color: #b49a6a;
+}
+
+.contact-info h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(40px, 5vw, 60px);
+  font-weight: 400;
+  line-height: 1.2;
+  color: #303b2d;
+  margin: 18px 0;
+}
+
+.contact-info p {
+  color: #898579;
+  font-size: 13px;
+  line-height: 2;
+}
+
+.contact-detail {
+  border-top: 1px solid #ded9cb;
+  padding: 20px 0;
+  margin-top: 25px;
+}
+
+.contact-detail span {
+  display: block;
+  color: #b49a6a;
+  font-size: 10px;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+}
+
+.contact-detail strong {
+  font-family: 'Playfair Display', serif;
+  font-size: 19px;
+  font-weight: 400;
+  color: #303b2d;
+}
+
+.contact-form {
+  background: #fffefa;
+  padding: 35px;
+}
+
+.contact-form h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 31px;
+  font-weight: 400;
+  color: #303b2d;
+  margin-bottom: 25px;
+}
+
+.contact-form label {
+  display: block;
+  font-size: 10px;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 20px;
+  background: #f6f3eb;
+  border: 1px solid #ded9cb;
+  font-family: inherit;
+  font-size: 13px;
+  outline: none;
+}
+
+.contact-form textarea {
+  height: 120px;
+  resize: vertical;
+}
+
+.contact-form button {
+  width: 100%;
+  padding: 16px;
+  background: #303b2d;
+  border: 1px solid #303b2d;
+  color: white;
+  letter-spacing: 2px;
+  font-size: 10px;
+  cursor: pointer;
+}
+
+.contact-form button:hover {
+  background: #b49a6a;
+  border-color: #b49a6a;
+}
+
+.contact-message {
+  display: none;
+  margin-top: 15px;
+  padding: 14px;
+  background: #e6eadf;
+  color: #303b2d;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.premium-footer {
+  background: #303b2d;
+  color: #f6f3eb;
+  padding: 65px 7% 25px;
+}
+
+.footer-main {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  gap: 45px;
+  padding-bottom: 45px;
+}
+
+.footer-brand h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 32px;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+.footer-brand p {
+  color: #c9c9bb;
+  font-size: 12px;
+  line-height: 1.9;
+  max-width: 300px;
+  margin-top: 15px;
+}
+
+.footer-column h3 {
+  color: #b49a6a;
+  font-size: 10px;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+}
+
+.footer-column button {
+  display: block;
+  background: none;
+  border: none;
+  color: #deded2;
+  font-family: inherit;
+  font-size: 12px;
+  margin: 13px 0;
+  cursor: pointer;
+  text-align: left;
+}
+
+.footer-column button:hover {
+  color: #b49a6a;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,.18);
+  padding-top: 22px;
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  flex-wrap: wrap;
+  color: #c9c9bb;
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+
+@media(max-width:750px) {
+  .contact-layout {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .contact-page {
+    padding: 65px 6%;
+  }
+
+  .contact-form {
+    padding: 25px 20px;
+  }
+
+  .footer-main {
+    grid-template-columns: 1fr 1fr;
+    gap: 35px;
+  }
+
+  .footer-brand {
+    grid-column: span 2;
+  }
+}
+`;
+
+const contactHTML = `
+<section class="page" id="contact">
+
+  <div class="contact-page">
+
+    <div class="contact-layout">
+
+      <div class="contact-info">
+
+        <div class="eyebrow">We Would Love to Hear From You</div>
+
+        <h2>Let's Make Something Beautiful.</h2>
+
+        <p>
+          Whether you are planning a special evening,
+          have a question or simply wish to connect,
+          we would be delighted to hear from you.
+        </p>
+
+        <div class="contact-detail">
+          <span>EMAIL</span>
+          <strong>hello@maisonroyale.example</strong>
+        </div>
+
+        <div class="contact-detail">
+          <span>LOCATION</span>
+          <strong>Discover Our Restaurant</strong>
+        </div>
+
+        <div class="contact-detail">
+          <span>HOSPITALITY</span>
+          <strong>Every Detail Matters</strong>
+        </div>
+
+      </div>
+
+      <form class="contact-form" id="contactForm">
+
+        <h3>Send Us a Message</h3>
+
+        <label>Your Name</label>
+        <input type="text" placeholder="Full name" required>
+
+        <label>Email Address</label>
+        <input type="email" placeholder="Your email" required>
+
+        <label>Subject</label>
+        <input type="text" placeholder="How can we help?" required>
+
+        <label>Your Message</label>
+        <textarea placeholder="Write your message..." required></textarea>
+
+        <button type="submit">Send Message →</button>
+
+        <div class="contact-message" id="contactMessage">
+          Thank you for your message. This is a demo form;
+          no message has been sent to a real restaurant.
+        </div>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</section>
+
+<footer class="premium-footer">
+
+  <div class="footer-main">
+
+    <div class="footer-brand">
+      <h2>MAISON ROYALE</h2>
+      <p>
+        A destination for exceptional dining,
+        thoughtful hospitality and unforgettable moments.
+      </p>
+    </div>
+
+    <div class="footer-column">
+      <h3>EXPLORE</h3>
+      <button onclick="goToPage('home')">Home</button>
+      <button onclick="goToPage('story')">Our Story</button>
+      <button onclick="goToPage('menu')">Our Menu</button>
+      <button onclick="goToPage('gallery')">Gallery</button>
+    </div>
+
+    <div class="footer-column">
+      <h3>DISCOVER</h3>
+      <button onclick="goToPage('reservation')">Reservations</button>
+      <button onclick="goToPage('contact')">Contact Us</button>
+      <button onclick="goToPage('home')">Back to Top ↑</button>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <span>© 2026 MAISON ROYALE</span>
+    <span>THE ART OF FINE DINING</span>
+    <span>DESIGNED WITH ELEGANCE</span>
+  </div>
+
+</footer>
+`;
+
+document.head.insertAdjacentHTML(
+  'beforeend',
+  '<style>' + contactStyle + '</style>'
+);
+
+document.body.insertAdjacentHTML('beforeend', contactHTML);
+
+document.getElementById('contactForm').addEventListener('submit', function(event) {
+  event.preventDefault();
+  document.getElementById('contactMessage').style.display = 'block';
+  this.reset();
+});
+
+})();
+</script>
+
+<script>
+(function() {
+
+const pizzaStyle = `
+.pizza-collection {
+  margin-top: 85px;
+  padding-top: 65px;
+  border-top: 1px solid #ded9cb;
+}
+
+.pizza-heading {
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+.pizza-heading .eyebrow {
+  color: #b49a6a;
+}
+
+.pizza-heading h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(38px, 6vw, 58px);
+  font-weight: 400;
+  color: #303b2d;
+  margin: 14px 0;
+}
+
+.pizza-heading p {
+  color: #898579;
+  font-size: 13px;
+  line-height: 1.9;
+  max-width: 550px;
+  margin: auto;
+}
+
+.pizza-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.pizza-card {
+  background: #fffefa;
+  overflow: hidden;
+  transition: .35s;
+}
+
+.pizza-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 15px 35px rgba(48,59,45,.12);
+}
+
+.pizza-card img {
+  width: 100%;
+  height: 230px;
+  display: block;
+  object-fit: cover;
+  transition: .5s;
+}
+
+.pizza-card:hover img {
+  transform: scale(1.04);
+}
+
+.pizza-card-content {
+  padding: 23px;
+}
+
+.pizza-card-content span {
+  color: #b49a6a;
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.pizza-card-content h3 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+  color: #303b2d;
+  font-size: 23px;
+  margin: 11px 0;
+}
+
+.pizza-card-content p {
+  color: #898579;
+  font-size: 12px;
+  line-height: 1.8;
+  min-height: 65px;
+}
+
+.pizza-price {
+  display: block;
+  margin-top: 18px;
+  font-family: 'Playfair Display', serif;
+  font-size: 21px;
+  color: #303b2d;
+}
+
+@media(max-width:850px) {
+  .pizza-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media(max-width:550px) {
+  .pizza-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pizza-card img {
+    height: 250px;
+  }
+}
+`;
+
+const pizzas = [
+  {
+    name: "Margherita Royale",
+    tag: "Italian Classic",
+    price: "$19",
+    desc: "Fresh mozzarella, ripe tomatoes, basil and classic Italian herbs.",
+    image: "photo-1574071318508-1cdbab80d002"
+  },
+  {
+    name: "Pepperoni Supreme",
+    tag: "House Favourite",
+    price: "$23",
+    desc: "Classic pepperoni, melted mozzarella and rich tomato sauce.",
+    image: "photo-1628840042765-356cda07504e"
+  },
+  {
+    name: "Four Cheese",
+    tag: "Cheese Collection",
+    price: "$24",
+    desc: "A rich blend of four cheeses with aromatic herbs.",
+    image: "photo-1571407970349-bc81e7e96d47"
+  },
+  {
+    name: "Chicken Tikka",
+    tag: "Spiced Favourite",
+    price: "$22",
+    desc: "Tikka chicken, mozzarella, peppers and signature sauce.",
+    image: "photo-1513104890138-7c749659a591"
+  },
+  {
+    name: "Chicken Fajita",
+    tag: "Chef's Favourite",
+    price: "$23",
+    desc: "Seasoned chicken, peppers, onions and melted cheese.",
+    image: "photo-1593560708920-61dd98c46a4e"
+  },
+  {
+    name: "BBQ Chicken",
+    tag: "Smoky Selection",
+    price: "$24",
+    desc: "Smoky barbecue chicken, red onions and mozzarella.",
+    image: "photo-1604382355076-af4b0eb60143"
+  },
+  {
+    name: "Veggie Supreme",
+    tag: "Garden Fresh",
+    price: "$20",
+    desc: "Mushrooms, olives, peppers, onions and fresh vegetables.",
+    image: "photo-1579751626657-72bc17010498"
+  },
+  {
+    name: "Beef Supreme",
+    tag: "Signature Selection",
+    price: "$26",
+    desc: "Seasoned beef, mozzarella, peppers and special herbs.",
+    image: "photo-1571407970349-bc81e7e96d47"
+  },
+  {
+    name: "Peri Peri Chicken",
+    tag: "Spicy Collection",
+    price: "$24",
+    desc: "Peri peri chicken, creamy cheese and a spicy finish.",
+    image: "photo-1565299624946-b28f40a0ae38"
+  },
+  {
+    name: "Truffle Mushroom",
+    tag: "Luxury Selection",
+    price: "$28",
+    desc: "Mushrooms, creamy cheese, herbs and delicate truffle flavour.",
+    image: "photo-1579751626657-72bc17010498"
+  },
+  {
+    name: "Hawaiian Royale",
+    tag: "Sweet & Savoury",
+    price: "$23",
+    desc: "Chicken, pineapple, mozzarella and a rich tomato base.",
+    image: "photo-1574071318508-1cdbab80d002"
+  },
+  {
+    name: "Meat Lovers",
+    tag: "Ultimate Favourite",
+    price: "$29",
+    desc: "A generous combination of beef, chicken, pepperoni and cheese.",
+    image: "photo-1513104890138-7c749659a591"
+  }
+];
+
+const menuGrid = document.querySelector('#menu .menu-grid');
+
+if (menuGrid && !document.querySelector('.pizza-collection')) {
+
+  // Remove the three earlier demo pizza cards
+  menuGrid.querySelectorAll('.menu-card').slice;
+
+  const cards = menuGrid.querySelectorAll('.menu-card');
+
+  for (let i = 0; i < 3; i++) {
+    if (cards.length > 0) {
+      cards[cards.length - 1 - i].remove();
+    }
+  }
+
+  const pizzaCards = pizzas.map(pizza => `
+    <article class="pizza-card">
+      <img
+        src="https://images.unsplash.com/${pizza.image}?w=800"
+        alt="${pizza.name}"
+        loading="lazy">
+
+      <div class="pizza-card-content">
+        <span>${pizza.tag}</span>
+        <h3>${pizza.name}</h3>
+        <p>${pizza.desc}</p>
+        <strong class="pizza-price">${pizza.price}</strong>
+      </div>
+    </article>
+  `).join('');
+
+  const pizzaSection = `
+    <section class="pizza-collection">
+
+      <div class="pizza-heading">
+        <div class="eyebrow">Fresh From Our Oven</div>
+        <h2>The Pizza Collection.</h2>
+        <p>
+          Discover our collection of handcrafted pizzas,
+          inspired by classic Italian flavours and
+          contemporary culinary creativity.
+        </p>
+      </div>
+
+      <div class="pizza-grid">
+        ${pizzaCards}
+      </div>
+
+    </section>
+  `;
+
+  const bottom = menuGrid.parentElement.querySelector('.menu-bottom');
+
+  if (bottom) {
+    bottom.insertAdjacentHTML('beforebegin', pizzaSection);
+  } else {
+    menuGrid.insertAdjacentHTML('afterend', pizzaSection);
+  }
+
+}
+
+document.head.insertAdjacentHTML(
+  'beforeend',
+  '<style>' + pizzaStyle + '</style>'
+);
+
+})();
+</script>
